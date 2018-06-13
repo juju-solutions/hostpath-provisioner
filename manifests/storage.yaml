@@ -30,14 +30,14 @@ spec:
                   fieldPath: spec.nodeName
 
             - name: PV_DIR
-              value: /var/kubernetes
+              value: /var/snap/microk8s/common/default-storage
 
 #            - name: PV_RECLAIM_POLICY
 #              value: Retain
 
           volumeMounts:
             - name: pv-volume
-              mountPath: /var/kubernetes
+              mountPath: /var/snap/microk8s/common/default-storage
 
       volumes:
         - name: pv-volume
