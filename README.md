@@ -19,6 +19,7 @@ Set the GOPATH and the rest of environment variables with something similar to t
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$GOBIN:$PATH
+mkdir -p $GOBIN
 ```
 
 Dependency management is done through [glide](https://github.com/Masterminds/glide)
@@ -36,8 +37,8 @@ sudo usermod -a -G docker $USER
 
 At this point we are able to get the source code and compile it
 ```
-go get github.com/ktsakalozos/hostpath-provisioner
-cd $HOME/go/github.com/juju-solutions/hostpath-provisioner
+go get github.com/juju-solutions/hostpath-provisioner
+cd $GOPATH/src/github.com/juju-solutions/hostpath-provisioner
 make
 ```
 
