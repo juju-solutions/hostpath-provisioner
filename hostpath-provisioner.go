@@ -35,7 +35,8 @@ import (
 
 const (
 	resyncPeriod              = 15 * time.Second
-	provisionerName           = "hostpath"
+        // The provisioner name "microk8s.io/hostpath" must be the one used in the storage class manifest
+	provisionerName           = "microk8s.io/hostpath"
 	exponentialBackOffOnError = false
 	failedRetryThreshold      = 5
 	leasePeriod               = controller.DefaultLeaseDuration

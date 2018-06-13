@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-IMAGE?=mazdermind/hostpath-provisioner
+IMAGE?=cdkbot/hostpath-provisioner
 
 TAG_GIT=$(IMAGE):$(shell git rev-parse HEAD)
 TAG_LATEST=$(IMAGE):latest
@@ -28,7 +28,7 @@ push:
 	docker push $(TAG_LATEST)
 
 update-deployment:
-	kubectl set image --namespace=kube-system deployment/hostpath-provisioner hostpath-provisioner=$(TAG_GIT)
+	microk8s.kubectl set image --namespace=kube-system deployment/hostpath-provisioner hostpath-provisioner=$(TAG_GIT)
 
 dependencies:
 	glide install -v
