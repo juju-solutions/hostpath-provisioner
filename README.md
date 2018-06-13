@@ -42,7 +42,7 @@ cd $GOPATH/src/github.com/juju-solutions/hostpath-provisioner
 make
 ```
 
-To build and push the docker image you need to first login in ad cdkbot
+To build and push the docker image you need to first login in as cdkbot
 ```
 docker login
 make image
